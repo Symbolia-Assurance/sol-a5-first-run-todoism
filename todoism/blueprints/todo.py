@@ -84,3 +84,11 @@ def clear_items():
         db.session.delete(item)
     db.session.commit()
     return jsonify(message=_('All clear!'))
+
+
+@todo_bp.route('/item/<int:item_id>/delete-fast', methods=['DELETE'])
+def delete_item_fast(item_id):
+    item = Item.query.get_or_404(item_id)
+    db.session.delete(item)
+    db.session.commit()
+    return '', 204
