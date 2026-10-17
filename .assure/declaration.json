@@ -1,0 +1,91 @@
+{
+  "app_objects": [
+    {
+      "factory": "create_app",
+      "module": "todoism",
+      "name": "app"
+    },
+    {
+      "module": "todoism.apis.v1",
+      "name": "api_v1"
+    },
+    {
+      "module": "todoism.blueprints.auth",
+      "name": "auth_bp"
+    },
+    {
+      "module": "todoism.blueprints.home",
+      "name": "home_bp"
+    },
+    {
+      "module": "todoism.blueprints.todo",
+      "name": "todo_bp"
+    }
+  ],
+  "app_roots": [
+    "todoism"
+  ],
+  "elevation_writers": [],
+  "execution_authorized": false,
+  "guards": [
+    {
+      "decorator": "login_required",
+      "definition": "flask_login.login_required",
+      "key": "_user_id",
+      "requires": "session_key_present"
+    }
+  ],
+  "hardware_authorized": false,
+  "id": "flask-80c645dcba49",
+  "identity_writers": [
+    "todoism.blueprints.auth.login"
+  ],
+  "idiom": "flask-session-decorator",
+  "industrial_release_authorized": false,
+  "language": "python",
+  "libraries": [
+    "click",
+    "faker",
+    "flask_babel",
+    "flask_cors",
+    "flask_login",
+    "flask_sqlalchemy",
+    "flask_wtf"
+  ],
+  "physical_validation": false,
+  "public_routes": [
+    {
+      "method": "GET",
+      "path": "/login"
+    },
+    {
+      "method": "POST",
+      "path": "/login"
+    },
+    {
+      "method": "GET",
+      "path": "/register"
+    },
+    {
+      "method": "GET",
+      "path": "/"
+    },
+    {
+      "method": "GET",
+      "path": "/intro"
+    },
+    {
+      "method": "GET",
+      "path": "/set-locale/{locale}"
+    }
+  ],
+  "registrations_complete": true,
+  "release_allowed": false,
+  "schema": "assure.python-auth.declaration/v1",
+  "self_approved": false,
+  "session_identity_key": "_user_id",
+  "signout_views": [
+    "todoism.blueprints.auth.logout"
+  ],
+  "simulation": true
+}
